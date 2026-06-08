@@ -114,9 +114,9 @@ html_theme_options = {
     "show_nav_level": 1,
     "show_toc_level": 3,
     "logo": {
-        "text": "codex_pipeline",
-        "image_light": "_static/logo.pdf",
-        "image_dark": "_static/logo.pdf",
+        "text": "codex",
+        "image_light": "_static/logo.png",
+        "image_dark": "_static/logo.png",
     }
 }
 html_context = {
