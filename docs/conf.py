@@ -58,7 +58,7 @@ def copy_and_truncate_csv(src_path, dest_path, columns, filter_column, filter_va
 filter_column = 'TYPE'
 filter_value = 'keyword'
 
-src_csv_path = os.path.abspath(os.path.join('../codex-pipeline/data/data/', 'omniheader.csv'))
+src_csv_path = os.path.abspath(os.path.join('../codex_pipeline/data/data/', 'omniheader.csv'))
 dest_csv_path = os.path.abspath(os.path.join('./data/', 'omniheader_select.csv'))
 columns_to_include = ['KEYWORD', 'COMMENT']
 
