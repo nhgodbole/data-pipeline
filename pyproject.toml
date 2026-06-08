@@ -1,0 +1,167 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools-scm>=8", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "data-pipeline"
+dynamic = ["version"]
+dependencies = [
+    "aioftp",
+    "aiohttp",
+    "aiosignal",
+    "astropy",
+    "async-timeout",
+    "ccsdspy",
+    "ffmpeg",
+    "imageio-ffmpeg",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "parfive",
+    "Pillow",
+    "python-dateutil",
+    "pytz",
+    "scipy",
+    "setuptools",
+    "sunpy",
+    "tqdm",
+    "wheel"
+]
+requires-python = ">=3.11"
+authors = [
+    # Update these as appropriate for the ISS-Codex team
+    { name = "J. Marcus Hughes", email = "marcus.hughes@swri.org" },
+]
+maintainers = [{ name = "J. Marcus Hughes", email = "marcus.hughes@swri.org" }]
+description = "Codex data pipeline code"
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = ["solar physics", "Codex", "NASA", "science", "pipeline"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+]
+
+[project.optional-dependencies]
+# Added "all" group to fix the Read the Docs error: "Directory '.[all,docs]' is not installable"
+all = [
+    # You can add dependencies here that should be included when installing .[all]
+]
+
+test = [
+    "pytest",
+    "pytest-order",
+    "codespell",
+    "coverage",
+    "pytest-cov",
+    "flake8",
+    "pytest-runner",
+    "pytest-mpl",
+    "pre-commit",
+    "ruff",
+    "hypothesis",
+]
+
+docs = [
+    "sphinx",
+    "sphinx-gallery",
+    "sphinx_rtd_theme",
+    "pydata-sphinx-theme",
+    "sphinx-autoapi",
+    "sphinx-favicon",
+    "jupyterlite-sphinx",
+    "ipython",
+    "ipykernel",
+    "sphinxcontrib-mermaid",
+]
+
+dev = ["data-pipeline[docs,test,all]"]
+
+[project.scripts]
+# Using data_pipeline as the module folder name (Python modules cannot have hyphens)
+codex-pipeline = "data_pipeline.cli:main"
+
+[project.urls]
+Documentation = "https://data-pipeline.readthedocs.io/en/latest/"
+Repository = "https://github.com/iss-codex/data-pipeline.git"
+"Bug Tracker" = "https://github.com/iss-codex/data-pipeline/issues"
+
+[tool.setuptools_scm]
+
+[tool.setuptools]
+# Module names must use underscores instead of hyphens
+packages = ["data_pipeline"]
+
+[tool.codespell]
+skip = "*.fts,*.fits,venv,*.pro,*.asdf,*.ipynb"
+
+[tool.ruff]
+target-version = 'py311'
+exclude = ['tests', 'scripts', 'docs', 'examples', "data_pipeline/auto/*"]
+line-length = 120
+lint.select = ["ALL"]
+lint.ignore = [
+    'EM102', 'TRY003', 'G004', "I001", 'D100', 'D104', "PTH", "FBT", 
+    "TD", "FIX", "PLR", "B028", "NPY002", "PERF401", "PERF403", "PYI041", 
+    "ANN401", "PYI024", "DTZ005", "D203", "D212", "TC002", "TC003", "E731", "EM101"
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402"]
+"*/tests/*" = ['S101']
+"confest.py" = ["ANN", "D"]
+
+[tool.isort]
+balanced_wrapping = true
+default_section = "THIRDPARTY"
+include_trailing_comma = true
+known_compatibility = "future"
+known_first_party = "data_pipeline"
+length_sort = false
+length_sort_sections = "stdlib"
+line_length = 120
+multi_line_output = 3
+no_lines_before = "LOCALFOLDER"
+sections = "FUTURE, COMPATIBILITY, STDLIB, THIRDPARTY, FIRSTPARTY, LOCALFOLDER"
+
+[tool.pytest.ini_options]
+markers = [
+    "regression: a regression test, likely slow",
+]
+
+[tool.gilesbot]
+[tool.gilesbot.pull_requests]
+enabled = true
+
+[tool.gilesbot.towncrier_changelog]
+enabled = true
+changelog_skip_label = "no-changelog-entry-needed"
+changelog_noop_label = "skip-changelog-checks"
+whatsnew_label = "whatsnew-needed"
+
+[tool.towncrier]
+package = "data_pipeline"
+filename = "CHANGELOG.rst"
+directory = "changelog/"
+issue_format = "`#{issue} <https://github.com/iss-codex/data-pipeline/pull/{issue}>`__"
+title_format = "{version} ({project_date})"
+
+[[tool.towncrier.type]]
+directory = "breaking"
+name = "Breaking Changes"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "deprecation"
+name = "Deprecations"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "feature"
+name = "New Features"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "bugfix"
+name = "Bug Fixes"
+showcontent = true
