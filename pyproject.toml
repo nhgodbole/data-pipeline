@@ -90,7 +90,7 @@ Repository = "https://github.com/iss-codex/data-pipeline.git"
 
 [tool.setuptools]
 # Module names must use underscores instead of hyphens
-packages = ["data_pipeline"]
+packages = ["codex_pipeline"]
 
 [tool.codespell]
 skip = "*.fts,*.fits,venv,*.pro,*.asdf,*.ipynb"
