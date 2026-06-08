@@ -23,12 +23,12 @@ from packaging.version import Version
 
 # -- Project information -----------------------------------------------------
 
-project = "data-pipeline"
+project = "codex_pipeline"
 copyright = "2026, CODEX Science Operations Center"
 author = "CODEX Science Operations Center"
 
 # The full version, including alpha/beta/rc tags
-release: str = get_version("data-pipeline")
+release: str = get_version("codex_pipeline")
 version: str = release
 _version = Version(release)
 if _version.is_devrelease:
@@ -114,7 +114,7 @@ html_theme_options = {
     "show_nav_level": 1,
     "show_toc_level": 3,
     "logo": {
-        "text": "data-pipeline",
+        "text": "codex_pipeline",
         "image_light": "_static/logo.png",
         "image_dark": "_static/logo.png",
     }
@@ -128,7 +128,7 @@ html_context = {
 }
 
 
-autoapi_dirs = ["../data-pipeline"]
+autoapi_dirs = ["../codex_pipeline"]
 
 favicons = ["favicon.ico"]
 
