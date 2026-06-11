@@ -14,9 +14,15 @@ utilizes this detector to simultaneously image each of the four polarizer angles
 a single observation, therefore eliminating any evolution of the scene between polarization observations.
 
 
-The 3 levels of processing are:
+The 4 levels of processing are:
 
 Level 0
+-------
+These are data direct from the CODEX camera, assembled into FITS files and merged with metadata from the
+instrument. The data are typically lossy compressed on board utilizing JPEG-LS; L0 images
+have been decompressed into their original form, values given in raw counts (DN).
+
+Level 1
 -------
 
 
@@ -26,3 +32,4 @@ Level 2
 
 Level 3
 -------
+
