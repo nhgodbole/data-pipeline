@@ -5,11 +5,24 @@ CODEX is an imaging mission and most data from the mission are images.  Because 
 compared to the various backgrounds in the data, high photometric precision and many steps of processing are required.  This
 means finding CODEX data can be complicated.
 
-The 2 levels of processing are:
+CODEX is designed to collect images of the solar corona in
+polarized light within the wavelength range spanning from 385 to
+440 nm to measure the coronal electron density, temperature, and
+speed between 3 and 8 solar radii. CODEX is a polarimeter, so image data arrive in polarized form, consisting
+of four-directional (0, 45, 90, and 135°) pixels. The CMOS has 4096 × 3000 pixels of 3.45μm x 3.45μm. CODEX
+utilizes this detector to simultaneously image each of the four polarizer angles in
+a single observation, therefore eliminating any evolution of the scene between polarization observations.
 
-Level 1
+
+The 3 levels of processing are:
+
+Level 0
 -------
 
 
 Level 2
+-------
+
+
+Level 3
 -------
