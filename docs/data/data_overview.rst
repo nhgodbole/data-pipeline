@@ -18,18 +18,19 @@ The 4 levels of processing are:
 
 Level 0
 -------
-These are data direct from the CODEX camera, assembled into FITS files and merged with metadata from the
-instrument. The data are typically lossy compressed on board utilizing JPEG-LS; L0 images
-have been decompressed into their original form, values given in raw counts (DN).
+These are data direct from the CODEX camera, assembled into FITS files with 16 bit pixels. Headers only contain information that came from instrument. The data are typically lossy compressed on board utilizing JPEG-LS; L0 images
+have been decompressed into their original form, values given in raw counts (DN). This data is currently not provided publicly.
 
 Level 1
 -------
-
+These are the FITS data, merged with additonal header information and split into the 4 polarization states. The data uses FITS extensions. Values are in raw counts (DN). Header contains all information in telemetry plus any ancillary information necessary to interpret the data, for example full World Coordinte System (WCS) compliance.
 
 Level 2
 -------
+FITS files from a single detector with calibrations applied. Values are in physical units (solar brightness).
 
 
 Level 3
 -------
+Data products are the result of combining two or more images (mosaics, movies, Carrington maps, etc.) or Derived quantities (pB, electron densities, temperature, and velocity, etc.). May or may not be physical units.
 
