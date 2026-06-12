@@ -9,16 +9,16 @@ Filter wheel Data Product Codes
 ------------------ 
 
 Filter Wheel 1
-   ND = Neutral density, 5 = 1E-5
-   Ca = 393.65 ± 0.2
-   BB = 412.5 ± 27.5 nm
-   T3 = 430.0 ± 5 nm
-   CL = Clear 
+ND = Neutral density, 5 = 1E-5
+Ca = 393.65 ± 0.2
+BB = 412.5 ± 27.5 nm
+T3 = 430.0 ± 5 nm
+CL = Clear 
 
 -------
 Filter Wheel 2
-   T1 = 393.5 ± 5 nm
-   T2 = 405.0 ± 5 nm
-   S1 = 398.7 ± 5 nm
-   S2 = 423.3 ± 5 nm
-   CL = Clear
+T1 = 393.5 ± 5 nm
+T2 = 405.0 ± 5 nm
+S1 = 398.7 ± 5 nm
+S2 = 423.3 ± 5 nm
+CL = Clear
