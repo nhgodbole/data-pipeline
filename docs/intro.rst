@@ -18,8 +18,9 @@ consists of several segments of processing.
 These segments are the following:
 
 - Raw to *Level 0*: converts raw coronagraph data to FITS images
-- Level 0 to *Level 1*: 
-- Level 1 to *Level 2*: 
+- Level 0 to *Level 1*: Updates FITS headers to include all necessary informaiton for science analysis, splits data into 4 polarization states.
+- Level 1 to *Level 2*: Provides calibrated, polarized images
+- Level 2 to Level 3: higher level products, combined images.
 
 CODEX and Python
 ----------------
